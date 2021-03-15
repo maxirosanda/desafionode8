@@ -5,7 +5,7 @@ module.exports = {
         async function leer(){
             
             try{
-                await fs.promises.readFile(`./productos.txt`,`utf-8`).then(contenido =>{
+                await fs.promises.readFile(`./productos.js`,`utf-8`).then(contenido =>{
                    guardados =  contenido
                 })
             }
@@ -30,7 +30,7 @@ module.exports = {
             async function agregar(){
                 
                 try{
-                    await fs.promises.writeFile(`./productos.txt`,`${JSON.stringify(arrego, null,'\t') }\n`)
+                    await fs.promises.writeFile(`./productos.js`,`${JSON.stringify(arrego, null,'\t') }\n`)
                 }
                 catch{
                     console.log('error')
