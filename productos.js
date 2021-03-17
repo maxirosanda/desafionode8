@@ -10,5 +10,11 @@
 		"title": "maxi",
 		"price": "345355",
 		"thumbnail": "hgshs"
+	},
+	{
+		"id": 21,
+		"title": "maxi",
+		"price": "345355",
+		"thumbnail": "hgshs"
 	}
-]
+]  
