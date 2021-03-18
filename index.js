@@ -13,6 +13,7 @@ var arreglo=[]
 moduloLeer.leer(fs).then(guardados=>{
 
   if(guardados) arreglo = JSON.parse(guardados)
+ 
 //-----------------------Lista------------------------------------------------
   router.get('/listar', function (req, res) {
     if( !arreglo.length ){
@@ -25,11 +26,18 @@ moduloLeer.leer(fs).then(guardados=>{
 
  router.get('/listar/:id', function (req, res) {
     let id = parseInt(req.params.id)
-  
-    if( (0 > id) || (arreglo.length - 1 < id)){
-        return res.status(400).json({"error": "Producto no encontrado"});
-    }
-    res.status(200).json(arreglo[id])
+    let existe =false
+    arreglo.forEach((element,index) =>{
+      if (element.id == id){
+        res.status(200).json(arreglo[index])   
+        existe=true  
+      }    
+
+  })
+  if(!existe){
+    return res.status(400).json({"error": "Producto no encontrado"});
+}
+    
   })
 
 
